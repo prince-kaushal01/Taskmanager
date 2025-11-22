@@ -1,243 +1,113 @@
-# Task Manager - Full Stack Application
+🚀 Task Manager Web App
 
-A modern, production-ready task management application built with React + Vite (frontend) and Node.js + Express (backend) with MongoDB.
+A scalable full-stack Task Management Application built using the MERN stack (MongoDB, Express.js, React, Node.js).
+This project includes secure authentication, CRUD operations, and a clean & modern UI.
 
-## Features
+✨ Features
+🔐 Authentication
 
-- User authentication (signup/login) with JWT
-- Create, read, update, and delete tasks
-- Mark tasks as completed
-- Organize tasks by priority (low, medium, high)
-- Task statistics dashboard
-- Modern dark theme UI
-- Responsive design (mobile and desktop)
-- Real-time task updates
-- Secure password hashing
+Register & login with JWT-based authentication
 
-## Project Structure
+Password hashing using bcrypt
 
-\`\`\`
-task-manager/
-├── backend/                    # Node.js + Express backend
-│   ├── models/                # MongoDB schemas
-│   │   ├── User.js           # User schema
-│   │   └── Task.js           # Task schema
-│   ├── routes/                # API routes
-│   │   ├── auth.js           # Authentication endpoints
-│   │   └── tasks.js          # Task CRUD endpoints
-│   ├── middleware/            # Express middleware
-│   │   └── auth.js           # JWT authentication
-│   ├── config/                # Configuration
-│   │   └── database.js       # MongoDB connection
-│   ├── server.js             # Express server entry point
-│   ├── package.json
-│   └── .env.example          # Environment variables template
-│
-└── frontend/                  # React + Vite frontend
-    ├── src/
-    │   ├── pages/            # Page components
-    │   │   ├── Login.jsx
-    │   │   ├── Register.jsx
-    │   │   └── Dashboard.jsx
-    │   ├── components/       # Reusable components
-    │   │   ├── LoginForm.jsx
-    │   │   ├── RegisterForm.jsx
-    │   │   ├── Navigation.jsx
-    │   │   ├── TaskForm.jsx
-    │   │   ├── TaskList.jsx
-    │   │   ├── TaskCard.jsx
-    │   │   └── TaskStats.jsx
-    │   ├── hooks/            # Custom hooks
-    │   │   └── useAuth.js    # Authentication hook
-    │   ├── services/         # API services
-    │   │   └── api.js        # Axios API client
-    │   ├── context/          # React Context
-    │   │   └── AuthContext.jsx
-    │   ├── App.jsx           # Main app component
-    │   ├── main.jsx          # Entry point
-    │   └── index.css         # Global styles
-    ├── vite.config.js
-    ├── tailwind.config.js
-    ├── postcss.config.js
-    ├── package.json
-    ├── tsconfig.json
-    └── .env.example
-\`\`\`
+Protected routes for dashboard access
 
-## Tech Stack
+🧑‍💻 User Profile
 
-- **Frontend**: React 18, Vite, TypeScript, Tailwind CSS, Axios
-- **Backend**: Node.js, Express.js, MongoDB, JWT
-- **Authentication**: JSON Web Tokens (JWT)
-- **Database**: MongoDB
-- **Security**: bcryptjs for password hashing
+Profile image support
 
-## Getting Started
+Display logged-in user's avatar, name & email
 
-### Prerequisites
+📝 Task Management (CRUD)
 
-- Node.js (v16 or higher)
-- MongoDB (local or Atlas)
-- npm or yarn
+Create, read, update & delete tasks
 
-### Quick Start (5 minutes)
+Inline task editing
 
-See [QUICKSTART.md](./QUICKSTART.md) for a step-by-step guide.
+Mark tasks as complete/incomplete
 
-### Detailed Setup
+🎯 UI/UX
 
-See [SETUP_INSTRUCTIONS.md](./SETUP_INSTRUCTIONS.md) for detailed instructions.
+Responsive, clean interface
 
-## Running Locally
+Built using React + TailwindCSS
 
-### Terminal 1 - Start Backend
+Smooth user experience
 
-\`\`\`bash
+🗃 Backend
+
+Node.js + Express.js REST API
+
+MongoDB database connection
+
+Error handling & validation middleware
+
+🛠 Tech Stack
+Layer	Technology
+Frontend	React (Vite), React Router DOM, Axios, TailwindCSS
+Backend	Node.js, Express.js, JWT, bcrypt
+Database	MongoDB (Mongoose ORM)
+Auth	JWT Tokens (LocalStorage)
+📂 Project Structure
+root/
+ ├── backend/        # Node.js + Express API
+ ├── frontend/       # Pure React UI (Vite)
+ ├── README.md       
+
+🔧 Installation & Setup
+
+Clone the repository:
+
+git clone https://github.com/your-username/your-repo.git
+
+Backend Setup
 cd backend
 npm install
-cp .env.example .env
-# Edit .env with your MongoDB URI
-npm run dev
-\`\`\`
+npm start   # or npm run dev if nodemon is enabled
 
-Backend runs on `http://localhost:5000`
 
-### Terminal 2 - Start Frontend
+Create a .env file inside /backend:
 
-\`\`\`bash
+MONGO_URI=YOUR_MONGODB_CONNECTION_STRING
+JWT_SECRET=YOUR_SECRET_KEY
+PORT=5000
+
+
+Ensure MongoDB is running.
+
+Frontend Setup
 cd frontend
 npm install
 npm run dev
-\`\`\`
 
-Frontend runs on `http://localhost:5173`
 
-### Open Application
+Create .env in /frontend (optional, if proxy is not used):
 
-Open your browser to `http://localhost:5173`
+VITE_API_URL=http://localhost:5000/api
 
-## API Endpoints
+🔐 API Endpoints (Quick Reference)
+Method	Route	Description
+POST	/api/auth/register	Create new user
+POST	/api/auth/login	User login
+GET	/api/tasks	Get all tasks
+POST	/api/tasks	Create task
+PUT	/api/tasks/:id	Update task
+DELETE	/api/tasks/:id	Delete task
+🚀 Future Improvements
 
-### Authentication
+Drag & drop task sorting
 
-- `POST /api/auth/register` - Register a new user
-- `POST /api/auth/login` - Login user
+Profile editing & image upload
 
-### Tasks
+Dark/Light theme support
 
-All task endpoints require JWT authentication (Bearer token)
+Deployment on cloud (Render / Netlify / Vercel)
 
-- `GET /api/tasks` - Get all tasks for authenticated user
-- `GET /api/tasks/:id` - Get a specific task
-- `POST /api/tasks` - Create a new task
-- `PUT /api/tasks/:id` - Update a task
-- `DELETE /api/tasks/:id` - Delete a task
+🤝 Contribution
 
-## Usage
+Pull requests are welcome. For major changes, open an issue first to discuss what you’d like to update.
 
-1. **Register**: Create a new account on the login page
-2. **Login**: Sign in with your credentials
-3. **Create Tasks**: Click "Create Task" and fill in task details
-4. **Manage Tasks**: 
-   - Check off completed tasks with the circle icon
-   - Filter tasks (All, Pending, Completed)
-   - Delete tasks with the trash icon
-5. **View Statistics**: See task counts on the dashboard
-6. **Logout**: Click the logout button in the navigation bar
+📬 Contact
 
-## Authentication Flow
-
-1. User registers or logs in
-2. Backend validates credentials and returns JWT token
-3. Frontend stores token in localStorage
-4. Token is sent with every API request in Authorization header
-5. Backend verifies token before processing requests
-
-## Security Features
-
-- Password hashing with bcryptjs
-- JWT-based authentication with expiration
-- Protected API routes with middleware
-- User-specific data isolation
-- CORS configuration
-- Secure token storage
-
-## Customization
-
-### Adding New Task Fields
-
-1. Update `backend/models/Task.js` schema
-2. Update `frontend/src/components/TaskForm.jsx`
-3. Update `frontend/src/components/TaskCard.jsx`
-
-### Changing Theme Colors
-
-Edit the colors in `frontend/tailwind.config.js`:
-
-\`\`\`javascript
-colors: {
-  background: '#0f172a',
-  foreground: '#f1f5f9',
-  primary: '#0ea5e9',
-  // ... update other colors
-}
-\`\`\`
-
-### Adding New Features
-
-- Create new backend routes in `backend/routes/`
-- Add corresponding React components in `frontend/src/components/`
-- Update Context API in `frontend/src/context/` if needed
-
-## Troubleshooting
-
-### Connection Issues
-
-- Ensure MongoDB is running or connected to Atlas
-- Check that API URL is correct in frontend `.env.local`
-- Verify backend and frontend are running on correct ports (5000, 5173)
-
-### Authentication Errors
-
-- Clear browser localStorage and re-login
-- Check JWT_SECRET is consistent
-- Verify token is being sent in Authorization header
-
-### CORS Errors
-
-- Ensure CLIENT_URL in backend .env matches frontend URL
-- Check CORS configuration in `backend/server.js`
-
-## Deployment
-
-### Backend Deployment
-
-Deploy to Heroku, Railway, Render, or DigitalOcean:
-- Set environment variables on platform
-- Use MongoDB Atlas for cloud database
-- Update CLIENT_URL to frontend URL
-
-See [DEPLOYMENT.md](./DEPLOYMENT.md) for detailed instructions.
-
-### Frontend Deployment
-
-Deploy to Vercel, Netlify, or other static hosts:
-- Build with `npm run build`
-- Set `VITE_API_URL` environment variable
-- Point to deployed backend API URL
-
-See [DEPLOYMENT.md](./DEPLOYMENT.md) for detailed instructions.
-
-## License
-
-This project is open source and available under the MIT License.
-
-## Support
-
-For issues or questions, please create an issue in the repository or refer to the documentation files.
-
-## Documentation
-
-- [QUICKSTART.md](./QUICKSTART.md) - Quick start guide
-- [SETUP_INSTRUCTIONS.md](./SETUP_INSTRUCTIONS.md) - Detailed setup
-- [DEPLOYMENT.md](./DEPLOYMENT.md) - Production deployment
+Developed by: Prince
+Email: princekaushal357@gmail.com
