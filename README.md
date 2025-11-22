@@ -1,113 +1,71 @@
-🚀 Task Manager Web App
+# Task Manager Web App
 
-A scalable full-stack Task Management Application built using the MERN stack (MongoDB, Express.js, React, Node.js).
-This project includes secure authentication, CRUD operations, and a clean & modern UI.
+A modern and scalable full-stack **task management** application built using the **MERN Stack**.  
+Supports **secure authentication**, **task CRUD operations**, and a **responsive UI** with a smooth user experience.
 
-✨ Features
-🔐 Authentication
+---
 
-Register & login with JWT-based authentication
+## 🚀 Tech Stack
 
-Password hashing using bcrypt
+| Layer | Technology |
+|-------|------------|
+| Frontend | React (Vite) • React Router • Axios • TailwindCSS |
+| Backend | Node.js • Express.js • JWT • bcrypt |
+| Database | MongoDB (Mongoose) |
+| State / Auth | Context API + Local Storage |
 
-Protected routes for dashboard access
+---
 
-🧑‍💻 User Profile
+## ✨ Core Features
 
-Profile image support
+- User Registration & Login (JWT Authentication)
+- Profile information with avatar support
+- Task Management: Create / Edit / Delete / Mark Complete
+- Protected Dashboard (only logged-in users)
+- Fully responsive clean UI
+- Proper folder structure for scalability
 
-Display logged-in user's avatar, name & email
+---
+### 1️⃣ Backend Setup
 
-📝 Task Management (CRUD)
-
-Create, read, update & delete tasks
-
-Inline task editing
-
-Mark tasks as complete/incomplete
-
-🎯 UI/UX
-
-Responsive, clean interface
-
-Built using React + TailwindCSS
-
-Smooth user experience
-
-🗃 Backend
-
-Node.js + Express.js REST API
-
-MongoDB database connection
-
-Error handling & validation middleware
-
-🛠 Tech Stack
-Layer	Technology
-Frontend	React (Vite), React Router DOM, Axios, TailwindCSS
-Backend	Node.js, Express.js, JWT, bcrypt
-Database	MongoDB (Mongoose ORM)
-Auth	JWT Tokens (LocalStorage)
-📂 Project Structure
-root/
- ├── backend/        # Node.js + Express API
- ├── frontend/       # Pure React UI (Vite)
- ├── README.md       
-
-🔧 Installation & Setup
-
-Clone the repository:
-
-git clone https://github.com/your-username/your-repo.git
-
-Backend Setup
+```bash
 cd backend
 npm install
-npm start   # or npm run dev if nodemon is enabled
+npm start  # or: npm run dev
 
+Create .env file inside backend folder:
 
-Create a .env file inside /backend:
-
-MONGO_URI=YOUR_MONGODB_CONNECTION_STRING
-JWT_SECRET=YOUR_SECRET_KEY
 PORT=5000
+MONGO_URI=YOUR_MONGO_CONNECTION_STRING
+JWT_SECRET=YOUR_SECRET_KEY
+```
+
+2️⃣ Frontend Setup
 
 
-Ensure MongoDB is running.
-
-Frontend Setup
+```bash
 cd frontend
 npm install
 npm run dev
+## 📁 Project Structure
+```
+
+🧩 Future Enhancements
+
+Profile update + image upload
+
+Search & filter for tasks
+
+Drag-and-drop task sorting
+
+Dark mode
+
+Deployed live version (Netlify + Render)
+
+👨‍💻 Developer
+
+Prince
+princekausal357@gmail.com
+Full-Stack Developer
 
 
-Create .env in /frontend (optional, if proxy is not used):
-
-VITE_API_URL=http://localhost:5000/api
-
-🔐 API Endpoints (Quick Reference)
-Method	Route	Description
-POST	/api/auth/register	Create new user
-POST	/api/auth/login	User login
-GET	/api/tasks	Get all tasks
-POST	/api/tasks	Create task
-PUT	/api/tasks/:id	Update task
-DELETE	/api/tasks/:id	Delete task
-🚀 Future Improvements
-
-Drag & drop task sorting
-
-Profile editing & image upload
-
-Dark/Light theme support
-
-Deployment on cloud (Render / Netlify / Vercel)
-
-🤝 Contribution
-
-Pull requests are welcome. For major changes, open an issue first to discuss what you’d like to update.
-
-📬 Contact
-
-Developed by: Prince
-Email: princekaushal357@gmail.com
